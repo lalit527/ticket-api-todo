@@ -1,7 +1,11 @@
 TicketApiTodo::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  
+  root :to => 'home#show'
+
+  namespace :support do
+    match '/signup' => 'signup#new', :via => [:get], :as => 'signup_new'
+  end
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
